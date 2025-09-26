@@ -1,6 +1,22 @@
 import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
+import { Playfair_Display, Inter } from 'next/font/google';
+
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  variable: '--font-playfair',
+  display: 'swap',
+});
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 export const metadata = {
   title: "summit.capital",
@@ -41,22 +57,18 @@ export const metadata = {
     icon: '/logo.png',
     shortcut: '/logo.png',
     apple: '/logo.png',
-    other: {
-      rel: 'apple-touch-icon-precomposed',
-      url: '/logo.png',
-    },
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-black text-white antialiased">
+      <body className={`min-h-screen bg-black text-white antialiased ${playfair.variable} ${inter.variable}`}>
         <header className="sticky top-0 z-50 backdrop-blur border-b border-[color:var(--cloud)] bg-black/80">
           <div className="container-pro flex items-center justify-between py-4">
             <Link href="/" className="flex items-center gap-3 transition-opacity duration-300 hover:opacity-80">
               <Image src="/logo.png" width={36} height={36} alt="sommet.capital" className="rounded-lg" />
-              <span className="font-semibold">sommet.capital</span>
+              <span className="font-playfair font-semibold">sommet.capital</span>
             </Link>
             <nav className="flex items-center gap-8 text-sm">
               <Link href="/portfolio" className="transition-colors duration-300 hover:text-[color:var(--cloud)]">Portfolio</Link>

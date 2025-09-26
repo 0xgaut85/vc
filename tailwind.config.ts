@@ -16,7 +16,10 @@ const config: Config = {
         gold: "#C7A86A"
       },
       fontFamily: {
-        sans: ["ui-sans-serif", "system-ui", "Inter", "Avenir", "Helvetica", "Arial", "sans-serif"]
+        'playfair': ['var(--font-playfair)', 'serif'],
+        'inter': ['var(--font-inter)', 'sans-serif'],
+        sans: ['var(--font-inter)', "ui-sans-serif", "system-ui", "Inter", "Avenir", "Helvetica", "Arial", "sans-serif"],
+        serif: ['var(--font-playfair)', "ui-serif", "Georgia", "Cambria", "Times New Roman", "Times", "serif"]
       },
       boxShadow: {
         glow: "0 0 24px rgba(46,111,255,.15)"
