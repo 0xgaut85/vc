@@ -77,7 +77,7 @@ export default function ThesisPage() {
             transition={{ duration: 1, ease: [0.2, 0.8, 0.2, 1] }}
           >
             <motion.span 
-              className="text-[color:var(--steel)] text-sm tracking-[0.2em] uppercase font-medium mb-6 block"
+              className="text-[color:var(--steel)] text-sm tracking-[0.2em] uppercase font-inter font-medium mb-6 block"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
@@ -86,7 +86,7 @@ export default function ThesisPage() {
             </motion.span>
             
             <motion.h1 
-              className="text-6xl md:text-8xl lg:text-9xl font-bold text-white leading-[0.9] mb-8"
+              className="text-6xl md:text-8xl lg:text-9xl font-playfair font-bold text-white leading-[0.9] mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 1, ease: [0.2, 0.8, 0.2, 1] }}
@@ -99,7 +99,7 @@ export default function ThesisPage() {
             </motion.h1>
             
             <motion.p 
-              className="text-xl md:text-2xl text-[color:var(--steel)] max-w-4xl mx-auto leading-relaxed"
+              className="text-xl md:text-2xl font-inter text-[color:var(--steel)] max-w-4xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
@@ -118,7 +118,7 @@ export default function ThesisPage() {
           transition={{ delay: 1.2, duration: 0.8 }}
         >
           <div className="flex flex-col items-center text-[color:var(--steel)] text-sm">
-            <span className="mb-4 tracking-wider">SCROLL TO EXPLORE</span>
+            <span className="mb-4 tracking-wider font-inter">SCROLL TO EXPLORE</span>
             <motion.div 
               className="w-px h-12 bg-gradient-to-b from-[color:var(--cloud)] to-transparent"
               animate={{ scaleY: [1, 0.5, 1] }}
@@ -143,7 +143,7 @@ export default function ThesisPage() {
                   viewport={{ once: true, margin: "-200px" }}
                   className="sticky top-1/2 transform -translate-y-1/2"
                 >
-                  <div className="text-8xl md:text-9xl font-bold text-white/10 leading-none mb-4">
+                  <div className="text-8xl md:text-9xl font-playfair font-bold text-white/10 leading-none mb-4">
                     {section.number}
                   </div>
                   
@@ -174,7 +174,7 @@ export default function ThesisPage() {
                   viewport={{ once: true, margin: "-200px" }}
                 >
                   <motion.span 
-                    className="text-[color:var(--steel)] text-sm tracking-[0.15em] uppercase font-medium mb-4 block"
+                    className="text-[color:var(--steel)] text-sm tracking-[0.15em] uppercase font-inter font-medium mb-4 block"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.6 }}
@@ -184,7 +184,7 @@ export default function ThesisPage() {
                   </motion.span>
                   
                   <motion.h2 
-                    className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-8"
+                    className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold text-white leading-tight mb-8"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
@@ -203,7 +203,7 @@ export default function ThesisPage() {
                   />
                   
                   <motion.p 
-                    className="text-2xl md:text-3xl text-white leading-relaxed mb-8 max-w-4xl"
+                    className="text-2xl md:text-3xl font-inter text-white leading-relaxed mb-8 max-w-4xl"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.8 }}
@@ -213,7 +213,7 @@ export default function ThesisPage() {
                   </motion.p>
                   
                   <motion.p 
-                    className="text-lg md:text-xl text-[color:var(--steel)] leading-relaxed max-w-4xl"
+                    className="text-lg md:text-xl font-inter text-[color:var(--steel)] leading-relaxed max-w-4xl"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8, duration: 0.8 }}
@@ -238,7 +238,7 @@ export default function ThesisPage() {
             viewport={{ once: true }}
           >
             <motion.h2 
-              className="text-5xl md:text-7xl font-bold text-white leading-tight mb-8"
+              className="text-5xl md:text-7xl font-playfair font-bold text-white leading-tight mb-8"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -252,7 +252,7 @@ export default function ThesisPage() {
             </motion.h2>
             
             <motion.p 
-              className="text-xl text-[color:var(--steel)] mb-12 max-w-2xl mx-auto"
+              className="text-xl font-inter text-[color:var(--steel)] mb-12 max-w-2xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}

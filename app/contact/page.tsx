@@ -111,8 +111,8 @@ export default function ContactPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
         >
-          <h1 className="heading-xl">Thank You</h1>
-                  <p className="body-lg mt-6 text-[color:var(--steel)] max-w-2xl">
+          <h1 className="heading-xl font-playfair">Thank You</h1>
+                  <p className="body-lg font-inter mt-6 text-[color:var(--steel)] max-w-2xl">
                     We will get back to you shortly.
                   </p>
         </motion.div>
@@ -128,8 +128,8 @@ export default function ContactPage() {
         transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
         className="text-center mb-12"
       >
-        <h1 className="heading-xl">Submit Your Deck</h1>
-        <p className="body-lg mt-6 text-[color:var(--steel)] max-w-2xl mx-auto">
+        <h1 className="heading-xl font-playfair">Submit Your Deck</h1>
+        <p className="body-lg font-inter mt-6 text-[color:var(--steel)] max-w-2xl mx-auto">
           If you are building, we want to see it.
         </p>
       </motion.div>

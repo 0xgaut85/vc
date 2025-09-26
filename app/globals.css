@@ -194,13 +194,13 @@ body {
 /* Defile window for the cycling word */
 .hero-sky__window{
   position: relative; display: inline-block; vertical-align: baseline;
-  overflow: hidden; line-height: 1.1; height: 1.2em; min-width: 10ch;
-  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  overflow: hidden; line-height: 1.1; height: 1.3em; min-width: 12ch;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 .hero-sky__column{ display: flex; flex-direction: column; will-change: transform; }
 .hero-sky__row{
-  height: 1em; display: flex; align-items: center; justify-content: center;
+  height: 1.1em; display: flex; align-items: center; justify-content: center;
   position: relative;
 }
 

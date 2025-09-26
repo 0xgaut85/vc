@@ -118,8 +118,8 @@ export default function PortfolioPage() {
         transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
         className="text-center mb-16"
       >
-        <h1 className="heading-xl">Portfolio</h1>
-        <p className="body-lg mt-6 text-[color:var(--steel)] max-w-3xl mx-auto">
+        <h1 className="heading-xl font-playfair">Portfolio</h1>
+        <p className="body-lg font-inter mt-6 text-[color:var(--steel)] max-w-3xl mx-auto">
           We back technical teams with short time-to-demo and credible unit economics.
         </p>
       </motion.div>
@@ -196,7 +196,7 @@ export default function PortfolioPage() {
               >
                 {/* Title */}
                 <motion.h3 
-                  className="text-3xl font-bold text-white mb-4 tracking-tight"
+                  className="text-3xl font-playfair font-bold text-white mb-4 tracking-tight"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.4 }}
@@ -206,7 +206,7 @@ export default function PortfolioPage() {
 
                 {/* Description */}
                 <motion.p 
-                  className="text-[color:var(--cloud)] leading-relaxed text-lg font-medium px-2"
+                  className="text-[color:var(--cloud)] leading-relaxed text-lg font-inter font-medium px-2"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.5 }}
@@ -262,7 +262,7 @@ export default function PortfolioPage() {
 
       {/* Swipe Hint */}
       <motion.p
-        className="text-center text-sm text-[color:var(--steel)] mt-6"
+        className="text-center text-sm font-inter text-[color:var(--steel)] mt-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1 }}
