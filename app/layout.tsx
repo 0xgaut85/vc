@@ -3,8 +3,49 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Sommet Capital",
-  description: "Backing frontier builders in AI, robotics and autonomous networks.",
+  title: "summit.capital",
+  description: "Early to Series A venture capital firm backing technical founders building the computational substrate of the next economy.",
+  keywords: "venture capital, VC, early stage, Series A, technical founders, AI, blockchain, robotics, deep tech",
+  authors: [{ name: "Sommet Capital" }],
+  creator: "Sommet Capital",
+  publisher: "Sommet Capital",
+  metadataBase: new URL('https://summit.capital'),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    title: "summit.capital",
+    description: "Early to Series A venture capital firm backing technical founders building the computational substrate of the next economy.",
+    url: 'https://summit.capital',
+    siteName: 'summit.capital',
+    images: [
+      {
+        url: '/logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Sommet Capital Logo',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "summit.capital",
+    description: "Early to Series A venture capital firm backing technical founders building the computational substrate of the next economy.",
+    site: '@sommetcapital',
+    creator: '@sommetcapital',
+    images: ['/logo.png'],
+  },
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+    other: {
+      rel: 'apple-touch-icon-precomposed',
+      url: '/logo.png',
+    },
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
