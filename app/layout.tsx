@@ -2,6 +2,7 @@ import "./globals.css";
 import Link from "next/link";
 import Image from "next/image";
 import { Playfair_Display, Inter } from 'next/font/google';
+import Navigation from '@/components/Navigation';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -63,37 +64,70 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`min-h-screen bg-black text-white antialiased ${playfair.variable} ${inter.variable}`}>
-        <header className="sticky top-0 z-50 backdrop-blur border-b border-[color:var(--cloud)] bg-black/80">
-          <div className="container-pro flex items-center justify-between py-4">
-            <Link href="/" className="flex items-center gap-3 transition-opacity duration-300 hover:opacity-80">
-              <Image src="/logo.png" width={36} height={36} alt="sommet.capital" className="rounded-lg" />
-              <span className="font-playfair font-semibold">sommet.capital</span>
-            </Link>
-            <nav className="flex items-center gap-8 text-sm">
-              <Link href="/portfolio" className="transition-colors duration-300 hover:text-[color:var(--cloud)]">Portfolio</Link>
-              <Link href="/thesis" className="transition-colors duration-300 hover:text-[color:var(--cloud)]">Thesis</Link>
-              <Link 
-                href="https://x.com/sommetcapital" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="transition-colors duration-300 hover:text-[color:var(--cloud)]"
-                aria-label="Follow us on X"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                </svg>
-              </Link>
-              <Link href="/contact" className="btn-secondary">Contact</Link>
-              <Link href="/contact" className="btn-primary">Submit Your Deck</Link>
-            </nav>
-          </div>
-        </header>
-        <main>{children}</main>
-        <footer className="border-t border-[color:var(--cloud)] mt-24">
-          <div className="container-pro py-12 text-sm text-[color:var(--steel)] flex flex-col gap-2 md:flex-row md:items-center md:justify-between">
-            <p>© {new Date().getFullYear()} Sommet Capital</p>
-            <p>Backing founders to reach new summits</p>
+      <body className={`min-h-screen bg-white text-black antialiased ${playfair.variable} ${inter.variable}`}>
+        <Navigation />
+        <main className="pt-24">{children}</main>
+        
+        <footer className="relative mt-32 overflow-hidden">
+          <div className="divider" />
+          <div className="container-pro py-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+              {/* Brand */}
+              <div className="lg:col-span-2">
+                <Link href="/" className="flex items-center gap-3 mb-6">
+                  <Image src="/logo.png" width={40} height={40} alt="sommet.capital" className="rounded-lg" />
+                  <span className="font-inter font-semibold text-lg tracking-tight">sommet.capital</span>
+                </Link>
+                <p className="text-[color:var(--dark-gray)] text-sm leading-relaxed max-w-sm">
+                  Early to Series A venture capital firm backing technical founders building the computational substrate of the next economy.
+                </p>
+              </div>
+              
+              {/* Links */}
+              <div>
+                <h3 className="text-sm font-semibold mb-4 tracking-tight">Explore</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link href="/portfolio" className="text-sm text-[color:var(--dark-gray)] hover:text-black transition-colors duration-200">
+                      Portfolio
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/thesis" className="text-sm text-[color:var(--dark-gray)] hover:text-black transition-colors duration-200">
+                      Thesis
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact" className="text-sm text-[color:var(--dark-gray)] hover:text-black transition-colors duration-200">
+                      Contact
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+              
+              {/* Social */}
+              <div>
+                <h3 className="text-sm font-semibold mb-4 tracking-tight">Connect</h3>
+                <ul className="space-y-3">
+                  <li>
+                    <Link 
+                      href="https://x.com/sommetcapital" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-sm text-[color:var(--dark-gray)] hover:text-black transition-colors duration-200">
+                      X / Twitter
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <div className="divider mb-8" />
+            
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[color:var(--dark-gray)]">
+              <p>© {new Date().getFullYear()} Sommet Capital. All rights reserved.</p>
+              <p className="hidden md:block">Backing founders to reach new summits.</p>
+            </div>
           </div>
         </footer>
       </body>

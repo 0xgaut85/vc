@@ -1,7 +1,8 @@
 'use client';
 
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
+import Link from "next/link";
 
 export default function ThesisPage() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -10,117 +11,104 @@ export default function ThesisPage() {
     offset: ["start start", "end end"]
   });
 
-  const [currentSection, setCurrentSection] = useState(0);
-
   const sections = [
     {
       number: "01",
-      title: "The Computational Transformation",
-      subtitle: "Convergence of exponential technologies",
-      text: "We are in the early stages of a fundamental shift where computation becomes ambient, intelligent and deeply integrated into physical systems.",
-      detail: "This transformation spans artificial intelligence, quantum computing, biotechnology, advanced materials and autonomous systems. Unlike previous technology cycles driven by connectivity or mobility, this wave is characterized by the convergence of multiple exponential technologies creating entirely new categories of value creation."
+      title: "The Decentralized Future",
+      subtitle: "Building open, computational infrastructure",
+      text: "We believe the future of global finance and computation will be decentralized, transparent, and built on open protocols.",
+      detail: "The transition from centralized intermediaries to open, permissionless systems represents the most significant shift in economic infrastructure since the internet. We invest in teams building the foundational protocols, infrastructure layers, and applications that will power this decentralized economy."
     },
     {
       number: "02", 
-      title: "Infrastructure Over Applications",
-      subtitle: "Building the foundational layer",
-      text: "Our investment philosophy prioritizes infrastructure and platform technologies over consumer applications.",
-      detail: "The most enduring value is created by companies that become essential building blocks for entire industries rather than end-user experiences. We focus on developer tools, computational platforms, hardware-software systems and protocol layers that enable thousands of other companies to build upon."
+      title: "Infrastructure First",
+      subtitle: "The picks and shovels of Web3",
+      text: "Our investment philosophy prioritizes infrastructure over applications—the foundational layers that enable the entire ecosystem.",
+      detail: "We focus on blockchain protocols, developer tooling, data availability layers, interoperability solutions, and computational infrastructure. These are the critical building blocks that thousands of applications will be built upon, creating lasting value and defensible network effects."
     },
     {
       number: "03",
-      title: "Technical Moats and Defensibility", 
-      subtitle: "Deep science meets engineering execution",
-      text: "In rapidly evolving technology markets, sustainable competitive advantages must be rooted in technical depth rather than market positioning.",
-      detail: "We seek companies with proprietary algorithms, unique datasets, specialized hardware capabilities or novel system architectures that create genuine barriers to entry. The strongest moats emerge from the intersection of deep scientific knowledge and engineering execution."
+      title: "Technical Depth and Innovation", 
+      subtitle: "Breakthrough technology, not incremental improvements",
+      text: "We seek category-defining projects with genuine technical innovation and strong fundamentals.",
+      detail: "Our portfolio companies are pushing the boundaries of cryptography, consensus mechanisms, zero-knowledge proofs, decentralized compute, and verifiable systems. We prioritize teams with deep technical expertise who are solving hard problems that matter, not chasing trends."
     },
     {
       number: "04",
-      title: "Market Timing and Adoption Curves",
-      subtitle: "2-5 years before mainstream adoption", 
-      text: "Our investment strategy targets technologies that are scientifically proven but commercially nascent.",
-      detail: "This timing allows us to partner with exceptional teams during their formative stages while avoiding the valuation premiums that accompany market validation. We look for early signals of product-market fit through enterprise pilot programs and research collaborations."
+      title: "AI Meets Blockchain",
+      subtitle: "The convergence of two transformative technologies", 
+      text: "We're particularly excited about the intersection of artificial intelligence and blockchain infrastructure.",
+      detail: "Decentralized AI networks, verifiable inference, on-chain model training, and AI-powered protocols represent massive opportunities. These technologies solve fundamental challenges around data ownership, model transparency, and democratized access to compute resources."
     },
     {
       number: "05",
-      title: "Global Innovation Networks",
-      subtitle: "Orchestrating worldwide talent and research",
-      text: "Innovation in frontier technologies increasingly occurs through global networks of research institutions, technology companies and entrepreneurial teams.",
-      detail: "We maintain deep relationships across European research universities, Silicon Valley technology companies and emerging innovation hubs worldwide. This network provides us with early visibility into breakthrough research and access to exceptional talent."
+      title: "Global Network and Support",
+      subtitle: "More than just capital",
+      text: "We provide comprehensive support across operations, growth, technical architecture, and strategic connections.",
+      detail: "Our portfolio companies benefit from advisory on legal structures, tokenomics, fundraising, and talent acquisition. We facilitate introductions to strategic partners, exchanges, infrastructure providers, and other portfolio companies. We're deeply embedded in the ecosystem and leverage our network to accelerate portfolio success."
     },
     {
       number: "06", 
-      title: "Capital Efficiency and Scale",
-      subtitle: "Sustainable unit economics at scale",
-      text: "Modern technology companies can achieve unprecedented scale with relatively modest capital requirements compared to previous industrial cycles.",
-      detail: "We focus on businesses that can demonstrate clear paths to profitability and sustainable unit economics, even in capital-intensive sectors like robotics and biotechnology. Our approach emphasizes revenue efficiency and gross margin expansion."
+      title: "Long-Term Value Creation",
+      subtitle: "Patient capital for fundamental growth",
+      text: "We take a long-term approach, focusing on sustainable growth and fundamental value creation rather than short-term speculation.",
+      detail: "We support our portfolio companies through multiple cycles, helping them build resilient businesses with strong unit economics. We evaluate opportunities based on technical merit, team quality, market opportunity, and the potential to become essential infrastructure for the decentralized economy."
     }
   ];
 
-  // Track scroll progress for section highlighting
-  useEffect(() => {
-    const unsubscribe = scrollYProgress.on("change", (latest) => {
-      const sectionIndex = Math.floor(latest * sections.length);
-      setCurrentSection(Math.min(sectionIndex, sections.length - 1));
-    });
-    return () => unsubscribe();
-  }, [scrollYProgress, sections.length]);
-
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className="relative bg-white">
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-[#F4F2EF]/50 to-white" />
+        
         <div className="container-pro text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.2, 0.8, 0.2, 1] }}
           >
-            <motion.span 
-              className="text-[color:var(--steel)] text-sm tracking-[0.2em] uppercase font-inter font-medium mb-6 block"
+            <motion.p 
+              className="text-sm uppercase tracking-wider text-[color:var(--dark-gray)] mb-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3, duration: 0.8 }}
             >
               Investment Philosophy
-            </motion.span>
+            </motion.p>
             
             <motion.h1 
-              className="text-6xl md:text-8xl lg:text-9xl font-playfair font-bold text-white leading-[0.9] mb-8"
+              className="hero-title max-w-5xl mx-auto mb-8"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 1, ease: [0.2, 0.8, 0.2, 1] }}
             >
-              Our
-              <br />
-              <span className="bg-gradient-to-r from-white via-[color:var(--cloud)] to-white bg-clip-text text-transparent">
-                Thesis
-              </span>
+              Our Thesis
             </motion.h1>
             
             <motion.p 
-              className="text-xl md:text-2xl font-inter text-[color:var(--steel)] max-w-4xl mx-auto leading-relaxed"
+              className="body-large max-w-3xl mx-auto"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7, duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
             >
-              We back technical founders building the computational substrate of the next economy. 
-              Our conviction stems from pattern recognition across technology cycles and deep domain expertise in frontier computing paradigms.
+              We invest in technical founders building the computational and decentralized infrastructure of the future economy. 
+              Our conviction is built on deep technical expertise, pattern recognition across crypto cycles, and a commitment to backing category-defining projects.
             </motion.p>
           </motion.div>
         </div>
 
         {/* Scroll indicator */}
         <motion.div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.8 }}
         >
-          <div className="flex flex-col items-center text-[color:var(--steel)] text-sm">
-            <span className="mb-4 tracking-wider font-inter">SCROLL TO EXPLORE</span>
+          <div className="flex flex-col items-center text-[color:var(--dark-gray)] text-xs">
+            <span className="mb-4 tracking-wider text-sm uppercase">SCROLL TO EXPLORE</span>
             <motion.div 
-              className="w-px h-12 bg-gradient-to-b from-[color:var(--cloud)] to-transparent"
+              className="w-px h-16 bg-gradient-to-b from-black/50 to-transparent"
               animate={{ scaleY: [1, 0.5, 1] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             />
@@ -128,39 +116,23 @@ export default function ThesisPage() {
         </motion.div>
       </section>
 
-      {/* Thesis Sections */}
+      {/* Thesis Sections - Editorial Layout */}
       {sections.map((section, index) => (
-        <section key={index} className="min-h-screen flex items-center relative">
+        <section key={index} className="relative py-24 lg:py-32">
           <div className="container-pro">
-            <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            <div className="grid lg:grid-cols-12 gap-12 lg:gap-20">
               
-              {/* Left Column - Number & Progress */}
+              {/* Left Column - Number */}
               <div className="lg:col-span-2">
                 <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
                   viewport={{ once: true, margin: "-200px" }}
-                  className="sticky top-1/2 transform -translate-y-1/2"
+                  className="lg:sticky lg:top-32"
                 >
-                  <div className="text-8xl md:text-9xl font-playfair font-bold text-white/10 leading-none mb-4">
+                  <div className="text-8xl lg:text-9xl font-bold text-black/5 leading-none tracking-tighter">
                     {section.number}
-                  </div>
-                  
-                  {/* Progress dots */}
-                  <div className="flex flex-col space-y-2">
-                    {sections.map((_, dotIndex) => (
-                      <motion.div
-                        key={dotIndex}
-                        className={`w-2 h-2 rounded-full transition-all duration-500 ${
-                          dotIndex === index ? 'bg-white' : 'bg-white/20'
-                        }`}
-                        animate={{
-                          scale: dotIndex === index ? 1.2 : 1,
-                          opacity: dotIndex === index ? 1 : 0.3
-                        }}
-                      />
-                    ))}
                   </div>
                 </motion.div>
               </div>
@@ -171,20 +143,23 @@ export default function ThesisPage() {
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 1, ease: [0.2, 0.8, 0.2, 1] }}
-                  viewport={{ once: true, margin: "-200px" }}
+                  viewport={{ once: true, margin: "-150px" }}
+                  className="space-y-8"
                 >
-                  <motion.span 
-                    className="text-[color:var(--steel)] text-sm tracking-[0.15em] uppercase font-inter font-medium mb-4 block"
+                  {/* Eyebrow */}
+                  <motion.p 
+                    className="text-sm uppercase tracking-wider text-[color:var(--dark-gray)] mb-4"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.6 }}
                     viewport={{ once: true }}
                   >
                     {section.subtitle}
-                  </motion.span>
+                  </motion.p>
                   
+                  {/* Title */}
                   <motion.h2 
-                    className="text-4xl md:text-6xl lg:text-7xl font-playfair font-bold text-white leading-tight mb-8"
+                    className="text-4xl lg:text-5xl font-semibold mb-8 leading-tight max-w-3xl"
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
@@ -193,8 +168,9 @@ export default function ThesisPage() {
                     {section.title}
                   </motion.h2>
                   
+                  {/* Divider */}
                   <motion.div 
-                    className="w-24 h-px bg-gradient-to-r from-[color:var(--cloud)] to-transparent mb-8"
+                    className="w-24 h-px bg-gradient-to-r from-black/30 to-transparent"
                     initial={{ scaleX: 0 }}
                     whileInView={{ scaleX: 1 }}
                     transition={{ delay: 0.5, duration: 1, ease: [0.2, 0.8, 0.2, 1] }}
@@ -202,8 +178,9 @@ export default function ThesisPage() {
                     style={{ transformOrigin: "left" }}
                   />
                   
+                  {/* Main Text */}
                   <motion.p 
-                    className="text-2xl md:text-3xl font-inter text-white leading-relaxed mb-8 max-w-4xl"
+                    className="text-xl lg:text-2xl text-black leading-relaxed max-w-3xl"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6, duration: 0.8 }}
@@ -212,8 +189,9 @@ export default function ThesisPage() {
                     {section.text}
                   </motion.p>
                   
+                  {/* Detail Text */}
                   <motion.p 
-                    className="text-lg md:text-xl font-inter text-[color:var(--steel)] leading-relaxed max-w-4xl"
+                    className="body-large max-w-3xl"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.8, duration: 0.8 }}
@@ -225,34 +203,44 @@ export default function ThesisPage() {
               </div>
             </div>
           </div>
+
+          {/* Subtle Divider */}
+          {index < sections.length - 1 && (
+            <motion.div 
+              className="container-pro mt-24 lg:mt-32"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+            >
+              <div className="divider-subtle" />
+            </motion.div>
+          )}
         </section>
       ))}
 
-      {/* Closing Section */}
-      <section className="min-h-screen flex items-center justify-center relative">
-        <div className="container-pro text-center">
+      {/* Closing CTA Section */}
+      <section className="relative py-32 overflow-hidden bg-[#F4F2EF]">
+        <div className="container-pro text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.2, 0.8, 0.2, 1] }}
             viewport={{ once: true }}
+            className="max-w-3xl mx-auto"
           >
             <motion.h2 
-              className="text-5xl md:text-7xl font-playfair font-bold text-white leading-tight mb-8"
+              className="section-title mb-8"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.8 }}
               viewport={{ once: true }}
             >
-              Ready to build
-              <br />
-              <span className="bg-gradient-to-r from-white via-[color:var(--cloud)] to-white bg-clip-text text-transparent">
-                the future?
-              </span>
+              Ready to Build the Future?
             </motion.h2>
             
             <motion.p 
-              className="text-xl font-inter text-[color:var(--steel)] mb-12 max-w-2xl mx-auto"
+              className="body-large mb-12"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
@@ -266,10 +254,14 @@ export default function ThesisPage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
               viewport={{ once: true }}
+              className="flex flex-wrap items-center justify-center gap-4"
             >
-              <a href="/contact" className="btn-primary text-lg px-8 py-4">
+              <Link href="/contact" className="btn-primary">
                 Start the Conversation
-              </a>
+              </Link>
+              <Link href="/portfolio" className="btn-secondary">
+                View Portfolio
+              </Link>
             </motion.div>
           </motion.div>
         </div>

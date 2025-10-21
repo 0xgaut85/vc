@@ -1,0 +1,162 @@
+{
+  "url": "https://www.mirana.xyz/",
+  "scrapedAt": "2025-10-21T17:40:55.891Z",
+  "designTokens": {
+    "colors": {
+      "background": "rgb(255, 255, 255)",
+      "text": "rgb(0, 0, 0)",
+      "text-html": "rgb(0, 0, 0)",
+      "text-head": "rgb(0, 0, 0)",
+      "text-style": "rgb(0, 0, 0)",
+      "text-meta": "rgb(0, 0, 0)",
+      "text-title": "rgb(0, 0, 0)",
+      "text-link": "rgb(0, 0, 0)",
+      "text-script": "rgb(0, 0, 0)",
+      "bg-body": "rgb(255, 255, 255)",
+      "text-body": "rgb(0, 0, 0)",
+      "text-div": "rgb(0, 0, 0)",
+      "text-a": "rgb(0, 0, 0)",
+      "text-img": "rgb(0, 0, 0)",
+      "bg-nav": "rgba(200, 200, 200, 0)",
+      "text-nav": "rgb(0, 0, 0)",
+      "bg-a": "rgba(0, 0, 0, 0.05)",
+      "text-main": "rgb(0, 0, 0)",
+      "text-h1": "rgb(0, 0, 0)",
+      "text-p": "rgb(0, 0, 0)",
+      "text-br": "rgba(0, 0, 0, 0.5)",
+      "bg-section": "rgb(244, 242, 239)",
+      "text-section": "rgb(0, 0, 0)",
+      "text-h2": "rgb(0, 0, 0)",
+      "text-svg": "rgb(0, 0, 0)",
+      "text-rect": "rgb(0, 0, 0)",
+      "text-h3": "rgb(0, 0, 0)",
+      "text-footer": "rgb(0, 0, 0)",
+      "bg-div": "rgb(255, 255, 255)",
+      "text-iframe": "rgb(0, 0, 0)"
+    },
+    "fonts": [
+      "Abcmonumentgrotesk, sans-serif",
+      "sans-serif",
+      "Abcmonumentgroteskmono, sans-serif"
+    ],
+    "spacing": [
+      "24px",
+      "4px 8px 3px",
+      "329px 0px 400px",
+      "0px 24px",
+      "0px 0px 4px",
+      "0px 0px 8px",
+      "0px 0px 0px 117px",
+      "0px 192px 279px 0px",
+      "104px 0px",
+      "0px 0px 16px",
+      "0px 0px 96px",
+      "0px 0px 48px",
+      "0px 32px 0px 0px",
+      "0px 120px 0px 541px",
+      "0px 0px 32px",
+      "348px 0px",
+      "200px 0px",
+      "0px 0px 24px",
+      "16px",
+      "8px 0px 0px",
+      "24px 0px",
+      "4px 0px 0px",
+      "32px 0px 0px",
+      "8px 12px",
+      "0px 273px"
+    ],
+    "animations": []
+  },
+  "pageStructure": [
+    {
+      "tag": "section",
+      "classes": [
+        "section_logo3"
+      ],
+      "text": "These Are Some of The Companies We Work With:We have invested in companies as early as Pre-Seed up t",
+      "children": 5,
+      "height": 1185
+    },
+    {
+      "tag": "div",
+      "classes": [
+        "section_about"
+      ],
+      "text": "Thesis and VisionWe believe in a decentralized and tokenized future. Our investment approach priorit",
+      "children": 1,
+      "height": 836
+    },
+    {
+      "tag": "div",
+      "classes": [
+        "section_about-wrapper"
+      ],
+      "text": "Thesis and VisionWe believe in a decentralized and tokenized future. Our investment approach priorit",
+      "children": 3,
+      "height": 140
+    },
+    {
+      "tag": "div",
+      "classes": [
+        "section_about_content-paragraphs"
+      ],
+      "text": "Our investment approach prioritizes the core values of decentralization, fundamental growth,  catego",
+      "children": 1,
+      "height": 140
+    },
+    {
+      "tag": "section",
+      "classes": [
+        "section_testimonial17"
+      ],
+      "text": "Research and WritingsExplore more articlesAug 18, 2025Stablecoins: Unlocking Fintech's Next Frontier",
+      "children": 1,
+      "height": 712
+    },
+    {
+      "tag": "div",
+      "classes": [
+        "section_testimonial17-wrapper"
+      ],
+      "text": "Research and WritingsExplore more articlesAug 18, 2025Stablecoins: Unlocking Fintech's Next Frontier",
+      "children": 2,
+      "height": 312
+    }
+  ],
+  "navigation": [
+    {
+      "text": "Home",
+      "href": "https://www.mirana.xyz/"
+    },
+    {
+      "text": "portfolio",
+      "href": "https://www.mirana.xyz/portfolio"
+    },
+    {
+      "text": "team",
+      "href": "https://www.mirana.xyz/team"
+    },
+    {
+      "text": "research",
+      "href": "https://www.mirana.xyz/research"
+    }
+  ],
+  "heroSection": {
+    "text": "Shaping the Future of Blockchain and Web3",
+    "fontSize": "14px",
+    "fontWeight": "400",
+    "lineHeight": "20px",
+    "letterSpacing": "normal",
+    "background": "rgba(0, 0, 0, 0)"
+  },
+  "animations": [
+    "none 0s ease 0s 1 normal none running",
+    "transition: all",
+    "transition: 0.3s cubic-bezier(0.47, 0, 0.745, 0.715)",
+    "transition: 0.3s",
+    "40s linear 0s infinite normal none running marquee-horizontal",
+    "transition: text-decoration 3s",
+    "transition: 0.2s cubic-bezier(0.47, 0, 0.745, 0.715)"
+  ]
+}

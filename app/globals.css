@@ -3,245 +3,303 @@
 @tailwind utilities;
 
 :root {
-  --black: #0A0A0A;
-  --ink: #0E0F13;
+  /* Mirana-inspired color scheme */
   --white: #FFFFFF;
-  --cloud: #E9EEF6;
-  --mist: #F4F7FB;
-  --steel: #AEB7C6;
+  --black: #000000;
+  --beige: #F4F2EF;
+  --light-gray: #F8F8F8;
+  --dark-gray: #666666;
+  --border: rgba(0, 0, 0, 0.1);
 }
 
-html, body, #__next { 
-  height: 100%; 
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--white);
-  background: var(--black);
+  font-family: var(--font-inter), -apple-system, system-ui, sans-serif;
+  color: var(--black);
+  background: var(--white);
   font-weight: 400;
-  letter-spacing: -0.005em;
-}
-
-/* Font Family Classes */
-.font-playfair {
-  font-family: var(--font-playfair), serif;
-}
-
-.font-inter {
-  font-family: var(--font-inter), sans-serif;
-}
-
-.bg-black {
-  background: var(--black);
-}
-
-.bg-ink {
-  background: var(--ink);
-}
-
-.grain::before {
-  content: "";
-  position: absolute; inset: 0; pointer-events: none;
-  background-image: url("/noise.png");
-  opacity: .02;
-  mix-blend-mode: overlay;
-}
-.container-pro { @apply mx-auto max-w-7xl px-6; }
-
-/* Typography */
-.heading-xl {
-  font-family: var(--font-playfair), serif;
-  font-size: 3.5rem;
-  line-height: 1.1;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-
-.heading-lg {
-  font-family: var(--font-playfair), serif;
-  font-size: 2rem;
-  line-height: 1.2;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-.heading-md {
-  font-family: var(--font-playfair), serif;
-  font-size: 1.5rem;
-  line-height: 1.3;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-.heading-sm {
-  font-family: var(--font-playfair), serif;
-  font-size: 1.25rem;
-  line-height: 1.4;
-  font-weight: 600;
-  letter-spacing: -0.005em;
-}
-
-.subtitle {
-  font-family: var(--font-playfair), serif;
-  font-style: italic;
-  font-weight: 500;
-  letter-spacing: -0.005em;
-}
-
-.body-lg {
-  font-family: var(--font-inter), sans-serif;
-  font-size: 1.125rem;
   line-height: 1.6;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container */
+.container-pro { 
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media (min-width: 768px) {
+  .container-pro {
+    padding: 0 4rem;
+  }
+}
+
+/* Typography - Mirana Style */
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.body-large {
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  line-height: 1.7;
   font-weight: 400;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.01em;
+  color: rgba(0, 0, 0, 0.85);
 }
 
 .body-text {
-  font-family: var(--font-inter), sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
   font-weight: 400;
-  letter-spacing: -0.005em;
+  color: rgba(0, 0, 0, 0.7);
 }
 
-/* Components */
+/* Buttons - Mirana Style with cubic-bezier transitions */
 .btn-primary {
-  @apply inline-flex items-center gap-2 rounded-xl bg-white text-black px-6 py-3 font-medium transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[color:var(--cloud)] focus:ring-opacity-40;
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: black;
+  color: white;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+  transform: translateY(-2px);
 }
 
 .btn-secondary {
-  @apply inline-flex items-center gap-2 rounded-xl border border-[color:var(--cloud)] bg-transparent px-6 py-3 font-medium text-white transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:bg-[color:var(--cloud)] hover:bg-opacity-10 focus:outline-none focus:ring-2 focus:ring-[color:var(--cloud)] focus:ring-opacity-40;
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: transparent;
+  color: black;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+  cursor: pointer;
 }
 
-.card {
-  @apply rounded-2xl border border-[color:var(--cloud)] bg-[color:var(--ink)] p-6 transition-all duration-500 ease-[cubic-bezier(0.2,0.8,0.2,1)] hover:-translate-y-0.5 hover:shadow-lg hover:shadow-white/10;
+.btn-secondary:hover {
+  border-color: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
 }
 
-.input-field {
-  @apply w-full rounded-xl border border-[color:var(--cloud)] bg-black px-4 py-3 text-white placeholder-[color:var(--steel)] transition-all duration-300 ease-[cubic-bezier(0.2,0.8,0.2,1)] focus:outline-none focus:ring-2 focus:ring-[color:var(--cloud)] focus:ring-opacity-40;
+/* Sections - Mirana-inspired spacing */
+section {
+  padding: 6rem 0;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 8rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  section {
+    padding: 10rem 0;
+  }
+}
+
+/* Logo Grid - Marquee Style (Mirana-inspired) */
+.logo-marquee {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 3rem;
+  margin: 4rem 0;
+}
+
+.logo-marquee-group {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 3rem;
+  min-width: 100%;
+  animation: marquee-horizontal 40s linear infinite;
+}
+
+@keyframes marquee-horizontal {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logo-item {
+  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.logo-item:hover {
+  background: rgba(0, 0, 0, 0.06);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.logo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1.5rem;
+  opacity: 0.8;
+}
+
+/* Support Grid */
+.support-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .support-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+  }
+}
+
+.support-item h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.support-item p {
+  color: rgba(0, 0, 0, 0.7);
+  line-height: 1.7;
+}
+
+/* Card Hover Effects - Mirana-inspired */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Team Member Card */
+.team-member {
+  transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+.team-member:hover {
+  transform: translateY(-4px);
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 3rem 0;
+  margin-top: 4rem;
+  background: var(--white);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: black;
 }
 
 /* Animations */
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
-/* === SKY GRADIENT BACKGROUND === */
-.hero-sky{
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  background: #0B0E14; /* fallback */
+/* Smooth fade in */
+.fade-in {
+  animation: fadeIn 0.6s ease-in-out;
 }
 
-.hero-sky__bg{
-  position: absolute; inset: 0; pointer-events: none;
-  background:
-    radial-gradient(1200px 700px at 70% -10%, rgba(233,238,246,0.10) 0%, rgba(233,238,246,0) 60%),
-    radial-gradient(900px 520px at 20% 110%, rgba(233,238,246,0.08) 0%, rgba(233,238,246,0) 70%),
-    linear-gradient(to top, #0B0E14 45%, #0F141C 75%, rgba(233,238,246,0.12) 100%);
-}
-
-/* === STARS === */
-.hero-sky__stars{ position: absolute; inset: 0; overflow: hidden; }
-.hero-sky__star{
-  position: absolute; bottom: -10vh;
-  background: #E9EEF6; border-radius: 9999px;
-  filter: blur(0.6px);
-  animation-name: heroRise;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-}
-@keyframes heroRise {
-  0% { transform: translateY(0); opacity: 0; }
-  8% { opacity: 1; }
-  88% { opacity: 1; }
-  100% { transform: translateY(-120vh); opacity: 0; }
-}
-
-/* === CONTENT === */
-.hero-sky__inner{
-  position: relative;
-  z-index: 2;
-  height: 100vh;
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 0 1.5rem;
-  display: flex; align-items: center; justify-content: center;
-  flex-direction: column; text-align: center;
-}
-
-.hero-sky__title{
-  font-family: var(--font-playfair), serif;
-  color: #FFFFFF;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  font-size: clamp(40px, 6vw, 72px);
-  line-height: 1.1;
-  margin: 0;
-}
-.hero-sky__lead{ 
-  color: #FFFFFF; 
-  font-family: var(--font-playfair), serif;
-  font-style: italic;
-  font-weight: 500;
-}
-
-/* Defile window for the cycling word */
-.hero-sky__window{
-  position: relative; display: inline-block; vertical-align: baseline;
-  overflow: hidden; line-height: 1.1; height: 1.3em; min-width: 12ch;
-  mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 8%, black 92%, transparent 100%);
-}
-.hero-sky__column{ display: flex; flex-direction: column; will-change: transform; }
-.hero-sky__row{
-  height: 1.1em; display: flex; align-items: center; justify-content: center;
-  position: relative;
-}
-
-/* Main word with a crisp glow */
-.hero-sky__word{
-  font-family: var(--font-playfair), serif;
-  font-weight: 800;
-  color: #E9EEF6;
-  text-shadow: 0 0 20px rgba(233,238,246,0.20), 0 0 40px rgba(233,238,246,0.12);
-}
-
-/* Trailing glow clones for a faint upward afterimage */
-.hero-sky__trail{
-  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-  color: #E9EEF6;
-  opacity: 0.18;
-  filter: blur(2px);
-  transform: translateY(10px);
-  pointer-events: none;
-}
-.hero-sky__trail--2{ opacity: 0.10; filter: blur(4px); transform: translateY(18px); }
-
-/* Subline and CTAs */
-.hero-sky__sub{
-  font-family: var(--font-inter), sans-serif;
-  margin-top: 1.25rem;
-  color: rgba(255,255,255,0.72);
-  font-size: clamp(16px, 2.3vw, 18px);
-  font-weight: 400;
-  max-width: 46rem;
-}
-
-.hero-sky__ctas{
-  display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap; align-items: center; justify-content: center;
-}
-
-/* Reduced motion: simplify visuals */
-@media (prefers-reduced-motion: reduce){
-  .hero-sky__bg{
-    background: linear-gradient(to top, #0B0E14 55%, #0F141C 100%);
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  .hero-sky__stars{ display: none; }
-  .hero-sky__trail{ display: none; }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
+

@@ -1,274 +1,314 @@
 'use client';
 
-import { Metadata } from "next";
-import { motion, AnimatePresence, PanInfo } from "framer-motion";
-import { useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 
 const startups = [
   { 
     name: "RICE AI", 
     desc: "Decentralized AI foundry powered by Rice Robotics. Solving AI robotics data scarcity with a reward system for robotics data sharing on DePIN.", 
-    logo: "/portfolio/RiceAi.jpg"
+    logo: "/portfolio/RiceAi.jpg",
+    sector: "AI + DePIN"
   },
   { 
     name: "Hyperion", 
     desc: "Fully on-chain hybrid Orderbook-AMM DEX built natively for Aptos.", 
-    logo: "/portfolio/Hyperion.jpg"
+    logo: "/portfolio/Hyperion.jpg",
+    sector: "Blockchain"
   },
   { 
     name: "RAA Vision", 
     desc: "Decentralized network powered by X social-emotional signals and AI feedback.", 
-    logo: "/portfolio/RaaVision.jpg"
+    logo: "/portfolio/RaaVision.jpg",
+    sector: "AI + Social"
   },
   { 
     name: "Sahara", 
     desc: "Decentralized AI network that unlocks fair and universal access to global knowledge capital.", 
-    logo: "/portfolio/sahara.png"
+    logo: "/portfolio/sahara.png",
+    sector: "AI + Blockchain"
   },
   { 
     name: "Glacier Network", 
     desc: "L2 rollup network empowering dApps to build on other dApps with programmable data composability solutions.", 
-    logo: "/portfolio/Glacier.jpg"
+    logo: "/portfolio/Glacier.jpg",
+    sector: "Blockchain"
   },
   { 
     name: "Pin AI", 
     desc: "The Open Platform for Personal AI. Built on open source AI, leveraging crypto for data ownership and privacy.", 
-    logo: "/portfolio/PinAi.jpg"
+    logo: "/portfolio/PinAi.jpg",
+    sector: "AI + Crypto"
   },
   { 
     name: "Limitless", 
     desc: "Prediction market platform on Base enabling trading of crypto, politics, sports and more.", 
-    logo: "/portfolio/limitless.jpg"
+    logo: "/portfolio/limitless.jpg",
+    sector: "DeFi"
   },
   { 
     name: "GAIB", 
     desc: "Economic layer transforming AI infrastructure investment by turning GPU-backed assets into yield-generating opportunities.", 
-    logo: "/portfolio/GAIB.jpg"
+    logo: "/portfolio/GAIB.jpg",
+    sector: "AI + DeFi"
   },
   { 
     name: "Theoriq AI", 
     desc: "Building scalable, censorship-resistant protocol for machine learning and complex data-driven computation for Web3.", 
-    logo: "/portfolio/Theoriq.jpg"
+    logo: "/portfolio/Theoriq.jpg",
+    sector: "AI + Web3"
   },
   { 
     name: "Synnax", 
     desc: "AI Credit Intelligence with smart, privacy-focused credit analysis using encryption, blockchain and decentralized AI.", 
-    logo: "/portfolio/Synnax.jpg"
+    logo: "/portfolio/Synnax.jpg",
+    sector: "AI + FinTech"
   },
   { 
-    name: "PitlaneOps", 
-    desc: "The operating layer that turns robot intent into trusted action.", 
-    logo: "/portfolio/PitlaneOps.jpg"
+    name: "RayLS", 
+    desc: "The blockchain for banks. Bringing $100 trillion and 6 billion bank customers onchain.", 
+    logo: "/portfolio/RayLS.png",
+    sector: "Blockchain"
+  },
+  { 
+    name: "Loyal", 
+    desc: "Private onchain intelligence infra.", 
+    logo: "/portfolio/Loyal.jpg",
+    sector: "AI + Blockchain"
+  },
+  { 
+    name: "Momentum", 
+    desc: "Building a global financial OS for the tokenized future.", 
+    logo: "/portfolio/Momentum.jpg",
+    sector: "DeFi"
+  },
+  { 
+    name: "AVICI", 
+    desc: "Neobank - Invest, spend, earn trust, go fully onchain for your banking needs.", 
+    logo: "/portfolio/Avici.jpg",
+    sector: "DeFi"
+  },
+  {
+    name: "Ondo Finance",
+    desc: "Institutional-grade financial products and services powered by blockchain. Tokenizing real-world assets with $1.6B+ TVL.",
+    logo: "/portfolio/ondo.jpg",
+    sector: "DeFi"
+  },
+  {
+    name: "Ta-da",
+    desc: "AI data marketplace centered on gamified Web3 application model. Raised $3.5M in 2025.",
+    logo: "/portfolio/Ta da.jpg",
+    sector: "AI + Web3"
+  },
+  {
+    name: "Inference Labs",
+    desc: "Web3 AI startup making artificial intelligence more accessible with decentralized and privacy-centric technologies.",
+    logo: "/portfolio/Inference Labs.jpg",
+    sector: "AI + Infrastructure"
+  },
+  {
+    name: "PublicAI",
+    desc: "Decentralized AI training network using blockchain to generate high-quality training data at scale.",
+    logo: "/portfolio/Public AI.jpg",
+    sector: "AI + Blockchain"
+  },
+  {
+    name: "AIT Protocol",
+    desc: "AI data infrastructure built on blockchain for data annotation and AI model training. Backed by Animoca Brands.",
+    logo: "/portfolio/Ait Protocol.jpg",
+    sector: "AI + Blockchain"
+  },
+  {
+    name: "Fetch.ai",
+    desc: "Open-access decentralized platform leveraging AI to create autonomous software agents. Raised $40M from top-tier VCs.",
+    logo: "/portfolio/FetchAI.png",
+    sector: "AI + Blockchain"
+  },
+  {
+    name: "Plasma",
+    desc: "Redefining how money moves. Stablecoin infrastructure for a new global financial system.",
+    logo: "/portfolio/Plasma.jpg",
+    sector: "DeFi"
+  },
+  {
+    name: "Credia",
+    desc: "AI research terminal for Web3. Real-time data, token insights, and narrative scans—just ask.",
+    logo: "/portfolio/Credia.jpg",
+    sector: "AI + Web3"
+  },
+  {
+    name: "Falcon",
+    desc: "The first universal collateralization infrastructure powering onchain liquidity and yield.",
+    logo: "/portfolio/Falcon.png",
+    sector: "DeFi"
+  },
+  {
+    name: "Scroll",
+    desc: "The secure and performant network for the Open Economy.",
+    logo: "/portfolio/Scroll.jpg",
+    sector: "Blockchain"
+  },
+  {
+    name: "AltLayer",
+    desc: "Accelerate Web3 with our restaked rollups & verifiable agents.",
+    logo: "/portfolio/AltLayer.jpg",
+    sector: "Infrastructure"
+  },
+  {
+    name: "Nomina",
+    desc: "Power tools for onchain markets. Building the first unified trading platform.",
+    logo: "/portfolio/Nomina.jpg",
+    sector: "DeFi"
+  },
+  {
+    name: "Tabi",
+    desc: "The World's First Decentralized Network for Consumer Finance",
+    logo: "/portfolio/Tabi.jpg",
+    sector: "DeFi"
   },
 ];
 
 export default function PortfolioPage() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <section className="pt-20 pb-16">
+        <div className="container-pro">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.2, 0.8, 0.2, 1] }}
+            className="max-w-4xl"
+          >
+            <p className="text-sm uppercase tracking-wider text-[color:var(--dark-gray)] mb-6">Portfolio</p>
+            <h1 className="hero-title mb-6">
+              Building the Computational Future
+            </h1>
+            <p className="body-large">
+              We back technical teams with short time-to-demo and credible unit economics. 
+              Our portfolio spans decentralized AI, blockchain infrastructure, robotics, and developer tools.
+            </p>
+          </motion.div>
+        </div>
+      </section>
 
-  const paginate = (newDirection: number) => {
-    setDirection(newDirection);
-    setCurrentIndex((prevIndex) => {
-      if (newDirection === 1) {
-        return (prevIndex + 1) % startups.length;
-      } else {
-        return (prevIndex - 1 + startups.length) % startups.length;
-      }
-    });
-  };
+      {/* Asymmetric Scattered Layout */}
+      <section className="pb-32 pt-24">
+        <div className="w-full px-8 max-w-[1800px] mx-auto">
+          <div className="relative min-h-[5000px]">
+            {startups.map((startup, index) => (
+              <PortfolioCard 
+                key={startup.name}
+                startup={startup}
+                index={index}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
 
-  const variants = {
-    enter: (direction: number) => {
-      return {
-        x: direction > 0 ? 400 : -400,
-        opacity: 0,
-        scale: 0.8,
-        rotateZ: direction > 0 ? 15 : -15,
-      };
-    },
-    center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1,
-      scale: 1,
-      rotateZ: 0,
-    },
-    exit: (direction: number) => {
-      return {
-        zIndex: 0,
-        x: direction < 0 ? 400 : -400,
-        opacity: 0,
-        scale: 0.8,
-        rotateZ: direction < 0 ? 15 : -15,
-      };
-    },
-  };
+      {/* CTA Section */}
+      <section className="pb-32 bg-[#F4F2EF]">
+        <div className="container-pro">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center py-16 px-8 rounded-2xl"
+          >
+            <h2 className="section-title mb-6">Want to Join Our Portfolio?</h2>
+            <p className="body-large mb-8 max-w-2xl mx-auto">
+              We're always looking for exceptional technical founders building the next generation of computational infrastructure.
+            </p>
+            <a href="/contact" className="btn-primary">
+              Submit Your Deck
+            </a>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+}
 
-  const swipeConfidenceThreshold = 10000;
-  const swipePower = (offset: number, velocity: number) => {
-    return Math.abs(offset) * velocity;
-  };
+function PortfolioCard({ startup, index }: { startup: typeof startups[0]; index: number }) {
+  // Organic scattered layout - varied vertical and horizontal positions
+  const positions = [
+    { top: '2%', left: '8%' },
+    { top: '6%', left: '28%' },
+    { top: '1%', left: '52%' },
+    { top: '8%', left: '75%' },
+    
+    { top: '16%', left: '15%' },
+    { top: '20%', left: '42%' },
+    { top: '18%', left: '68%' },
+    
+    { top: '30%', left: '5%' },
+    { top: '28%', left: '25%' },
+    { top: '34%', left: '48%' },
+    { top: '31%', left: '72%' },
+    
+    { top: '44%', left: '18%' },
+    { top: '48%', left: '38%' },
+    { top: '42%', left: '62%' },
+    
+    { top: '58%', left: '10%' },
+    { top: '56%', left: '32%' },
+    { top: '62%', left: '55%' },
+    { top: '59%', left: '78%' },
+    
+    { top: '72%', left: '22%' },
+    { top: '76%', left: '45%' },
+    { top: '70%', left: '68%' },
+    
+    { top: '86%', left: '12%' },
+    { top: '88%', left: '35%' },
+    { top: '84%', left: '58%' },
+    { top: '90%', left: '80%' },
+    
+    { top: '98%', left: '20%' },
+    { top: '96%', left: '48%' },
+  ];
+  
+  const position = positions[index % positions.length];
 
   return (
-    <div className="container-pro py-20">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: [0.2, 0.8, 0.2, 1] }}
-        className="text-center mb-16"
-      >
-        <h1 className="heading-xl font-playfair">Portfolio</h1>
-        <p className="body-lg font-inter mt-6 text-[color:var(--steel)] max-w-3xl mx-auto">
-          We back technical teams with short time-to-demo and credible unit economics.
-        </p>
-      </motion.div>
-
-      {/* Card Container */}
-      <div className="relative h-[600px] max-w-md mx-auto">
-        <AnimatePresence initial={false} custom={direction}>
-          <motion.div
-            key={currentIndex}
-            custom={direction}
-            variants={variants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{
-              x: { type: "spring", stiffness: 400, damping: 35 },
-              opacity: { duration: 0.3, ease: [0.2, 0.8, 0.2, 1] },
-              scale: { duration: 0.3, ease: [0.2, 0.8, 0.2, 1] },
-              rotateZ: { duration: 0.4, ease: [0.2, 0.8, 0.2, 1] },
-            }}
-            whileHover={{
-              scale: 1.02,
-              transition: { duration: 0.2 }
-            }}
-            whileTap={{
-              scale: 0.98,
-              transition: { duration: 0.1 }
-            }}
-            drag="x"
-            dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={1}
-            onDragEnd={(e, { offset, velocity }) => {
-              const swipe = swipePower(offset.x, velocity.x);
-
-              if (swipe < -swipeConfidenceThreshold) {
-                paginate(1);
-              } else if (swipe > swipeConfidenceThreshold) {
-                paginate(-1);
-              }
-            }}
-            className="absolute inset-0 cursor-grab active:cursor-grabbing"
-          >
-            <div className="w-full h-full bg-[color:var(--ink)] border border-[color:var(--cloud)] rounded-3xl overflow-hidden shadow-2xl flex flex-col">
-              {/* Logo Section */}
-              <motion.div 
-                className="flex-[3] flex items-end justify-center bg-gradient-to-b from-white/8 to-white/3 p-2 pb-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-                <motion.div 
-                  className="w-56 h-56 rounded-2xl overflow-hidden bg-white/15 flex items-center justify-center shadow-lg"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.2, ease: [0.2, 0.8, 0.2, 1] }}
-                  whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-                >
-                  <Image
-                    src={startups[currentIndex].logo}
-                    alt={`${startups[currentIndex].name} logo`}
-                    width={224}
-                    height={224}
-                    className="w-full h-full object-cover"
-                  />
-                </motion.div>
-              </motion.div>
-
-              {/* Content Section */}
-              <motion.div 
-                className="flex-[2] p-6 pt-2 flex flex-col justify-start text-center"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                {/* Title */}
-                <motion.h3 
-                  className="text-3xl font-playfair font-bold text-white mb-4 tracking-tight"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                >
-                  {startups[currentIndex].name}
-                </motion.h3>
-
-                {/* Description */}
-                <motion.p 
-                  className="text-[color:var(--cloud)] leading-relaxed text-lg font-inter font-medium px-2"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                >
-                  {startups[currentIndex].desc}
-                </motion.p>
-              </motion.div>
-            </div>
-          </motion.div>
-        </AnimatePresence>
-
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ 
+        duration: 0.8, 
+        delay: (index % 5) * 0.12,
+        ease: [0.2, 0.8, 0.2, 1]
+      }}
+      viewport={{ once: true, margin: "-150px" }}
+      className="absolute group"
+      style={position}
+    >
+      {/* Smaller Logo Container */}
+      <div className="relative w-20 h-20 mb-4 rounded-xl overflow-hidden bg-white border border-black/5 group-hover:border-black/15 transition-all duration-500 group-hover:shadow-xl">
+        <Image
+          src={startup.logo}
+          alt={`${startup.name} logo`}
+          fill
+          className="object-contain p-3 group-hover:scale-110 transition-transform duration-500"
+        />
       </div>
 
-      {/* Navigation Controls */}
-      <motion.div 
-        className="flex justify-center gap-4 mt-8"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.3 }}
-      >
-        <button
-          onClick={() => paginate(-1)}
-          className="w-12 h-12 rounded-full border border-[color:var(--cloud)] bg-transparent text-white hover:bg-[color:var(--cloud)] hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center"
-        >
-          ←
-        </button>
-        <button
-          onClick={() => paginate(1)}
-          className="w-12 h-12 rounded-full border border-[color:var(--cloud)] bg-transparent text-white hover:bg-[color:var(--cloud)] hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center"
-        >
-          →
-        </button>
-      </motion.div>
+      {/* Company Name */}
+      <h3 className="text-base font-semibold mb-1 tracking-tight group-hover:text-black/70 transition-colors max-w-[140px]">
+        {startup.name}
+      </h3>
 
-      {/* Progress Indicator */}
-      <motion.div 
-        className="flex justify-center gap-2 mt-6"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-      >
-        {startups.map((_, index) => (
-          <div
-            key={index}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex 
-                ? 'bg-white' 
-                : 'bg-[color:var(--cloud)] bg-opacity-30'
-            }`}
-          />
-        ))}
-      </motion.div>
+      {/* Sector Tag */}
+      <p className="text-[9px] uppercase tracking-widest text-[color:var(--dark-gray)] mb-2 font-medium">
+        {startup.sector}
+      </p>
 
-      {/* Swipe Hint */}
-      <motion.p
-        className="text-center text-sm font-inter text-[color:var(--steel)] mt-6"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1 }}
-      >
-        Swipe or use arrows to explore our portfolio
-      </motion.p>
-    </div>
+      {/* Description - Compact */}
+      <p className="text-[11px] leading-relaxed text-[color:var(--dark-gray)] max-w-[160px]">
+        {startup.desc}
+      </p>
+    </motion.div>
   );
 }
