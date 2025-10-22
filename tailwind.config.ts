@@ -12,7 +12,7 @@ const config: Config = {
         slate: "#141A23",
         fog: "#F5F7FA",
         apex: "#2E6FFF",
-        summit: "#16CABD",
+        ascentis: "#16CABD",
         gold: "#C7A86A"
       },
       fontFamily: {

@@ -1,7 +1,7 @@
 # Playwright Scraping Results - Mirana.xyz Design Analysis
 
 ## Overview
-Successfully scraped and analyzed design patterns from mirana.xyz using Playwright and applied them to sommet.capital.
+Successfully scraped and analyzed design patterns from mirana.xyz using Playwright and applied them to ascentis.capital.
 
 ---
 
@@ -24,7 +24,7 @@ Successfully scraped and analyzed design patterns from mirana.xyz using Playwrig
 
 ---
 
-## ✅ Changes Applied to Sommet.capital
+## ✅ Changes Applied to Ascentis.capital
 
 ### 1. **Logo Marquee Animation** ✓
 - Updated from `30s` to `40s` linear infinite
@@ -77,7 +77,7 @@ Added new section to homepage with:
 
 ## 📊 Comparison: Before vs After
 
-### Before (Original Sommet.capital)
+### Before (Original Ascentis.capital)
 - 30s marquee animation
 - Basic 0.2s ease transitions
 - No Team page
@@ -140,7 +140,7 @@ Added new section to homepage with:
 
 ## 🎨 Design Philosophy Alignment
 
-Both Mirana and Sommet.capital now share:
+Both Mirana and Ascentis.capital now share:
 - **Modern, premium aesthetic** with generous whitespace
 - **Smooth, professional interactions** with cubic-bezier easing
 - **Strong typography hierarchy** with clear section titles
@@ -152,7 +152,7 @@ Both Mirana and Sommet.capital now share:
 
 ## 📝 Notes
 
-- Maintained Sommet's brand identity (dark theme, Playfair Display + Inter fonts)
+- Maintained Ascentis's brand identity (dark theme, Playfair Display + Inter fonts)
 - Applied Mirana's design patterns without directly copying layout
 - Enhanced existing components rather than rebuilding from scratch
 - All changes are production-ready and responsive

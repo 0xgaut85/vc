@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Canvas } from '@react-three/fiber';
 import * as THREE from 'three';
 import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import SummitBackground from '@/components/SummitBackground';
+import AscentisBackground from '@/components/AscentisBackground';
 
 /** Palette */
 const BG = '#0B0E14';      // near-black
@@ -55,7 +55,7 @@ export default function HeroSky() {
   const transition = instant ? { duration: 0 } : { duration: 0.5, ease: [0.2, 0.8, 0.2, 1] };
 
   return (
-    <section className="hero-sky" aria-label="Sommet Capital hero">
+    <section className="hero-sky" aria-label="Ascentis Capital hero">
       {/* Three.js Wireframe Waves Background */}
       <div className="absolute inset-0 z-0 w-full h-full">
         <Canvas 
@@ -82,7 +82,7 @@ export default function HeroSky() {
           style={{ width: '100%', height: '100%' }}
           resize={{ scroll: false, debounce: { scroll: 50, resize: 0 } }}
         >
-          <SummitBackground />
+          <AscentisBackground />
         </Canvas>
       </div>
 
@@ -126,7 +126,7 @@ export default function HeroSky() {
           animate={{ opacity: 0.8, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15, ease: [0.2, 0.8, 0.2, 1] }}
         >
-          Early to Series A. Europe and beyond. We partner with founders to reach new summits.
+          Early to Series A. Europe and beyond. Guiding visionary founders to the peak of their potential.
         </motion.p>
 
         <motion.div

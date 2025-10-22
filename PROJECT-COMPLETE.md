@@ -2,7 +2,7 @@
 
 ## 🚀 Executive Summary
 
-Successfully used **Playwright** to scrape design patterns from **mirana.xyz** and applied them to **sommet.capital**. The site now features Mirana's professional animations, generous spacing, and modern design patterns while maintaining its unique brand identity.
+Successfully used **Playwright** to scrape design patterns from **mirana.xyz** and applied them to **ascentis.capital**. The site now features Mirana's professional animations, generous spacing, and modern design patterns while maintaining its unique brand identity.
 
 ---
 
@@ -30,7 +30,7 @@ Successfully used **Playwright** to scrape design patterns from **mirana.xyz** a
 - Pages: Home, Portfolio, Team, Research
 - Modern, professional aesthetic
 
-### Sommet.capital (Your Updated Site) ✨
+### Ascentis.capital (Your Updated Site) ✨
 - **40s marquee** ← Applied from Mirana
 - **Same cubic-bezier transitions** ← Applied from Mirana
 - **Enhanced spacing (96-160px)** ← Applied from Mirana

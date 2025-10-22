@@ -20,27 +20,27 @@ const inter = Inter({
 });
 
 export const metadata = {
-  title: "summit.capital",
+  title: "ascentis.capital",
   description: "Early to Series A venture capital firm backing technical founders building the computational substrate of the next economy.",
   keywords: "venture capital, VC, early stage, Series A, technical founders, AI, blockchain, robotics, deep tech",
-  authors: [{ name: "Sommet Capital" }],
-  creator: "Sommet Capital",
-  publisher: "Sommet Capital",
-  metadataBase: new URL('https://summit.capital'),
+  authors: [{ name: "Ascentis Capital" }],
+  creator: "Ascentis Capital",
+  publisher: "Ascentis Capital",
+  metadataBase: new URL('https://ascentis.capital'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: "summit.capital",
+    title: "ascentis.capital",
     description: "Early to Series A venture capital firm backing technical founders building the computational substrate of the next economy.",
-    url: 'https://summit.capital',
-    siteName: 'summit.capital',
+    url: 'https://ascentis.capital',
+    siteName: 'ascentis.capital',
     images: [
       {
         url: '/logo.png',
         width: 1200,
         height: 630,
-        alt: 'Sommet Capital Logo',
+        alt: 'Ascentis Capital Logo',
       },
     ],
     locale: 'en_US',
@@ -48,10 +48,10 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "summit.capital",
+    title: "ascentis.capital",
     description: "Early to Series A venture capital firm backing technical founders building the computational substrate of the next economy.",
-    site: '@sommetcapital',
-    creator: '@sommetcapital',
+    site: '@ascentiscapital',
+    creator: '@ascentiscapital',
     images: ['/logo.png'],
   },
   icons: {
@@ -75,8 +75,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {/* Brand */}
               <div className="lg:col-span-2">
                 <Link href="/" className="flex items-center gap-3 mb-6">
-                  <Image src="/logo.png" width={40} height={40} alt="sommet.capital" className="rounded-lg" />
-                  <span className="font-inter font-semibold text-lg tracking-tight">sommet.capital</span>
+                  <Image src="/logo.png" width={40} height={40} alt="ascentis.capital" className="rounded-lg" />
+                  <span className="font-inter font-semibold text-lg tracking-tight">ascentis.capital</span>
                 </Link>
                 <p className="text-[color:var(--dark-gray)] text-sm leading-relaxed max-w-sm">
                   Early to Series A venture capital firm backing technical founders building the computational substrate of the next economy.
@@ -111,7 +111,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <ul className="space-y-3">
                   <li>
                     <Link 
-                      href="https://x.com/sommetcapital" 
+                      href="https://x.com/ascentiscapital" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-sm text-[color:var(--dark-gray)] hover:text-black transition-colors duration-200">
@@ -125,8 +125,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="divider mb-8" />
             
             <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[color:var(--dark-gray)]">
-              <p>© {new Date().getFullYear()} Sommet Capital. All rights reserved.</p>
-              <p className="hidden md:block">Backing founders to reach new summits.</p>
+              <p>© {new Date().getFullYear()} Ascentis Capital. All rights reserved.</p>
+              <p className="hidden md:block">Guiding visionary founders to the peak of their potential.</p>
             </div>
           </div>
         </footer>

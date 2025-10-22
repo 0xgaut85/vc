@@ -38,7 +38,7 @@ export default function Home() {
                 Building the Computational Substrate of the Next Economy
               </h1>
               <p className="body-large">
-                Sommet Capital is a leading venture capital fund that provides long-term capital and strategic partnerships to visionary technical founders in AI, blockchain, robotics, and deep tech.
+                Ascentis Capital is a leading venture capital fund that provides long-term capital and strategic partnerships to visionary technical founders in AI, blockchain, robotics, and deep tech.
               </p>
             </motion.div>
 
@@ -146,7 +146,7 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
             >
               <h2 className="section-title mb-12">
-                What Sommet Capital Provides For Our Portfolio Companies:
+                What Ascentis Capital Provides For Our Portfolio Companies:
               </h2>
 
               <div className="space-y-8">
@@ -167,7 +167,7 @@ export default function Home() {
 
                 <div className="support-item">
                   <h3>Network Connections:</h3>
-                  <p>Synergies across Sommet's extensive investment portfolio and strategic partners in the ecosystem.</p>
+                  <p>Synergies across Ascentis's extensive investment portfolio and strategic partners in the ecosystem.</p>
                 </div>
               </div>
             </motion.div>

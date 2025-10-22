@@ -2,7 +2,7 @@
 
 ## ✅ What Was Accomplished
 
-Successfully scraped **mirana.xyz** (your website) using Playwright and applied modern design patterns to **sommet.capital**!
+Successfully scraped **mirana.xyz** (your website) using Playwright and applied modern design patterns to **ascentis.capital**!
 
 ---
 

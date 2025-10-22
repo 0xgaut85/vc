@@ -1,4 +1,4 @@
-# Sommet Capital — Next.js 14 site
+# Ascentis Capital — Next.js 14 site
 
 Pages:
 - `/` Landing with Three.js hero (mountain/particles) and animated word cycle (robotics → blockchain → AI → autonomy → cryptography) using Framer Motion.
@@ -19,5 +19,5 @@ pnpm dev # http://localhost:3000
 
 ## Notes
 - Three.js is dynamically imported and only used on the landing page (no SSR).
-- Colors follow the Sommet palette: Ink `#0B0E14`, Slate `#141A23`, Fog `#F5F7FA`, Apex Blue `#2E6FFF`, Summit Teal `#16CABD`, Gold `#C7A86A`.
+- Colors follow the Ascentis palette: Ink `#0B0E14`, Slate `#141A23`, Fog `#F5F7FA`, Apex Blue `#2E6FFF`, Ascentis Teal `#16CABD`, Gold `#C7A86A`.
 - Replace `app/api/submit/route.ts` with your actual email/storage pipeline.

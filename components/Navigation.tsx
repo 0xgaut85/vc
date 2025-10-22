@@ -33,13 +33,13 @@ export default function Navigation() {
             src="/logo.png" 
             width={scrolled ? 32 : 36} 
             height={scrolled ? 32 : 36} 
-            alt="sommet.capital" 
+            alt="ascentis.capital" 
             className="rounded-lg transition-all duration-300" 
           />
           <span className={`font-inter font-semibold tracking-tight transition-all duration-300 text-black ${
             scrolled ? 'text-sm' : 'text-base'
           }`}>
-            sommet.capital
+            ascentis.capital
           </span>
         </Link>
         
@@ -57,7 +57,7 @@ export default function Navigation() {
             Thesis
           </Link>
           <Link 
-            href="https://x.com/sommetcapital" 
+            href="https://x.com/ascentiscapital" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-[color:var(--dark-gray)] hover:text-black transition-all duration-300 cubic-bezier(0.47, 0, 0.745, 0.715)"

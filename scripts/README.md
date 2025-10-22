@@ -93,9 +93,9 @@ Only scrape websites you own or have permission to analyze. This tool is designe
 - Design research and inspiration
 - Non-commercial analysis
 
-## 🎨 Applied to Sommet.capital
+## 🎨 Applied to Ascentis.capital
 
-The scraped data was used to enhance sommet.capital with:
+The scraped data was used to enhance ascentis.capital with:
 - 40s marquee animation (from Mirana's 40s timing)
 - cubic-bezier(0.47, 0, 0.745, 0.715) transitions
 - Enhanced section spacing (6-10rem)

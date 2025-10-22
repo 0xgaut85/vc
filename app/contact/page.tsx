@@ -182,7 +182,7 @@ export default function ContactPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              Thank you for your interest in Sommet Capital. We've received your deck and will carefully review it. 
+              Thank you for your interest in Ascentis Capital. We've received your deck and will carefully review it. 
               If there's a potential fit, we'll reach out within 48 hours.
             </motion.p>
             
@@ -444,7 +444,7 @@ export default function ContactPage() {
               Questions about the application process?
             </p>
             <a 
-              href="https://x.com/sommetcapital" 
+              href="https://x.com/ascentiscapital" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-black font-medium hover:opacity-70 transition-opacity duration-300"

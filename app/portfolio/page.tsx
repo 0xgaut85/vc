@@ -41,6 +41,12 @@ const startups = [
     sector: "AI + Crypto"
   },
   { 
+    name: "Nolimit", 
+    desc: "A privacy-first AI ecosystem. Redefining what AI can and should be.", 
+    logo: "/portfolio/nolimit.jpg",
+    sector: "AI"
+  },
+  { 
     name: "Limitless", 
     desc: "Prediction market platform on Base enabling trading of crypto, politics, sports and more.", 
     logo: "/portfolio/limitless.jpg",

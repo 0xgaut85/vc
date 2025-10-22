@@ -52,7 +52,7 @@ export default function HeroSky() {
   const transition = instant ? { duration: 0 } : { duration: 0.5, ease: [0.2, 0.8, 0.2, 1] };
 
   return (
-    <section className="hero-sky" aria-label="Sommet Capital hero">
+    <section className="hero-sky" aria-label="Ascentis Capital hero">
       {/* Background layers */}
       <div className="hero-sky__bg" aria-hidden="true" />
       <RisingStars muted={reduced} />
@@ -97,7 +97,7 @@ export default function HeroSky() {
           animate={{ opacity: 0.8, y: 0 }}
           transition={{ duration: 0.6, delay: 0.15, ease: [0.2, 0.8, 0.2, 1] }}
         >
-          Early to Series A. Europe and beyond. We partner with founders scaling new summits.
+          Early to Series A. Europe and beyond. Guiding visionary founders to the peak of their potential.
         </motion.p>
 
         <motion.div
