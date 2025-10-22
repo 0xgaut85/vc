@@ -198,10 +198,10 @@ export default function PortfolioPage() {
         </div>
       </section>
 
-      {/* Asymmetric Scattered Layout */}
+      {/* Responsive Portfolio Grid */}
       <section className="pb-32 pt-24">
-        <div className="w-full px-8 max-w-[1800px] mx-auto">
-          <div className="relative min-h-[5000px]">
+        <div className="container-pro">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-12 lg:gap-16">
             {startups.map((startup, index) => (
               <PortfolioCard 
                 key={startup.name}
@@ -238,61 +238,20 @@ export default function PortfolioPage() {
 }
 
 function PortfolioCard({ startup, index }: { startup: typeof startups[0]; index: number }) {
-  // Organic scattered layout - varied vertical and horizontal positions
-  const positions = [
-    { top: '2%', left: '8%' },
-    { top: '6%', left: '28%' },
-    { top: '1%', left: '52%' },
-    { top: '8%', left: '75%' },
-    
-    { top: '16%', left: '15%' },
-    { top: '20%', left: '42%' },
-    { top: '18%', left: '68%' },
-    
-    { top: '30%', left: '5%' },
-    { top: '28%', left: '25%' },
-    { top: '34%', left: '48%' },
-    { top: '31%', left: '72%' },
-    
-    { top: '44%', left: '18%' },
-    { top: '48%', left: '38%' },
-    { top: '42%', left: '62%' },
-    
-    { top: '58%', left: '10%' },
-    { top: '56%', left: '32%' },
-    { top: '62%', left: '55%' },
-    { top: '59%', left: '78%' },
-    
-    { top: '72%', left: '22%' },
-    { top: '76%', left: '45%' },
-    { top: '70%', left: '68%' },
-    
-    { top: '86%', left: '12%' },
-    { top: '88%', left: '35%' },
-    { top: '84%', left: '58%' },
-    { top: '90%', left: '80%' },
-    
-    { top: '98%', left: '20%' },
-    { top: '96%', left: '48%' },
-  ];
-  
-  const position = positions[index % positions.length];
-
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
       transition={{ 
-        duration: 0.8, 
-        delay: (index % 5) * 0.12,
+        duration: 0.6, 
+        delay: (index % 8) * 0.08,
         ease: [0.2, 0.8, 0.2, 1]
       }}
-      viewport={{ once: true, margin: "-150px" }}
-      className="absolute group"
-      style={position}
+      viewport={{ once: true, margin: "-100px" }}
+      className="group flex flex-col"
     >
-      {/* Smaller Logo Container */}
-      <div className="relative w-20 h-20 mb-4 rounded-xl overflow-hidden bg-white border border-black/5 group-hover:border-black/15 transition-all duration-500 group-hover:shadow-xl">
+      {/* Logo Container */}
+      <div className="relative w-20 h-20 sm:w-24 sm:h-24 mb-4 rounded-xl overflow-hidden bg-white border border-black/5 group-hover:border-black/15 transition-all duration-500 group-hover:shadow-xl">
         <Image
           src={startup.logo}
           alt={`${startup.name} logo`}
@@ -302,17 +261,17 @@ function PortfolioCard({ startup, index }: { startup: typeof startups[0]; index:
       </div>
 
       {/* Company Name */}
-      <h3 className="text-base font-semibold mb-1 tracking-tight group-hover:text-black/70 transition-colors max-w-[140px]">
+      <h3 className="text-base sm:text-lg font-semibold mb-2 tracking-tight group-hover:text-black/70 transition-colors">
         {startup.name}
       </h3>
 
       {/* Sector Tag */}
-      <p className="text-[9px] uppercase tracking-widest text-[color:var(--dark-gray)] mb-2 font-medium">
+      <p className="text-[9px] sm:text-[10px] uppercase tracking-widest text-[color:var(--dark-gray)] mb-3 font-medium">
         {startup.sector}
       </p>
 
-      {/* Description - Compact */}
-      <p className="text-[11px] leading-relaxed text-[color:var(--dark-gray)] max-w-[160px]">
+      {/* Description */}
+      <p className="text-xs sm:text-sm leading-relaxed text-[color:var(--dark-gray)]">
         {startup.desc}
       </p>
     </motion.div>

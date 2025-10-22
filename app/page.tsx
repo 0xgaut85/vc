@@ -25,19 +25,20 @@ export default function Home() {
   return (
     <>
       {/* Hero Section with Illustration */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden py-20 md:py-0">
         <div className="container-pro relative z-10 w-full">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left Side - Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
+              className="order-2 lg:order-1"
             >
-              <h1 className="hero-title">
+              <h1 className="hero-title text-4xl sm:text-5xl lg:text-6xl xl:text-7xl">
                 Building the Computational Substrate of the Next Economy
               </h1>
-              <p className="body-large">
+              <p className="body-large text-base sm:text-lg lg:text-xl">
                 Ascentis Capital is a leading venture capital fund that provides long-term capital and strategic partnerships to visionary technical founders in AI, blockchain, robotics, and deep tech.
               </p>
             </motion.div>
@@ -47,7 +48,7 @@ export default function Home() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="relative w-full h-[1000px] lg:h-[1400px]"
+              className="relative w-full h-[400px] sm:h-[600px] lg:h-[1000px] xl:h-[1400px] order-1 lg:order-2"
             >
               <Image
                 src="/illustration1.jpg"
