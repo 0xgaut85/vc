@@ -58,6 +58,10 @@ export const metadata = {
     icon: '/logo.png',
     shortcut: '/logo.png',
     apple: '/logo.png',
+    other: {
+      rel: 'icon',
+      url: '/logo.png',
+    },
   },
 };
 
