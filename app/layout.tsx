@@ -50,8 +50,8 @@ export const metadata = {
     card: 'summary_large_image',
     title: "ascentis.capital",
     description: "Early to Series A venture capital firm backing technical founders building the computational substrate of the next economy.",
-    site: '@ascentiscapital',
-    creator: '@ascentiscapital',
+    site: '@ascentisVC',
+    creator: '@ascentisVC',
     images: ['/logo.png'],
   },
   icons: {
@@ -115,7 +115,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <ul className="space-y-3">
                   <li>
                     <Link 
-                      href="https://x.com/ascentiscapital" 
+                      href="https://x.com/ascentisVC" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="text-sm text-[color:var(--dark-gray)] hover:text-black transition-colors duration-200">

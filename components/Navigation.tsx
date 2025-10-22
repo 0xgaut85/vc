@@ -72,7 +72,7 @@ export default function Navigation() {
               Thesis
             </Link>
             <Link 
-              href="https://x.com/ascentiscapital" 
+              href="https://x.com/ascentisVC" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-[color:var(--dark-gray)] hover:text-black transition-all duration-300 cubic-bezier(0.47, 0, 0.745, 0.715)"
@@ -132,7 +132,7 @@ export default function Navigation() {
               Thesis
             </Link>
             <Link 
-              href="https://x.com/ascentiscapital" 
+              href="https://x.com/ascentisVC" 
               target="_blank" 
               rel="noopener noreferrer"
               onClick={() => setMobileMenuOpen(false)}

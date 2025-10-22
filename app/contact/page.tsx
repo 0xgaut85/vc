@@ -444,7 +444,7 @@ export default function ContactPage() {
               Questions about the application process?
             </p>
             <a 
-              href="https://x.com/ascentiscapital" 
+              href="https://x.com/ascentisVC" 
               target="_blank" 
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-black font-medium hover:opacity-70 transition-opacity duration-300"
